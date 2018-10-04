@@ -25,11 +25,11 @@ app.use(function(req, res, next) {
 });
 
 app.post('/calculate', function(req,res){
-  console.log("Req Body : ",req.body);
-  const result = math.eval(req.body.result);
-  result = math.format(result, { precision: 14 });
-  console.log(result);
-  res.status(200).send(result);
+  console.log("Req Body : ",req.body.result);
+  var answer = math.eval(req.body.result);
+  answer = math.format(answer, { precision: 11 });
+  console.log(answer);
+  res.status(200).send(answer);
 })
 
 //start your server on port 3001

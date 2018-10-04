@@ -12,7 +12,8 @@ class App extends Component {
 
   calculate = () => {
     console.log(this.state.result);
-    axios.post('http://localhost:3001/calculate', this.state.result)
+    let expression = this.state.result.join('');
+    axios.post('http://localhost:3001/calculate', {result: expression})
       .then(response => {
         console.log("Response : ", response);
         if(response.status === 200){
