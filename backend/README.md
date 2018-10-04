@@ -6,5 +6,5 @@ How to run calculator backend?
   - Run calculator back end using npm start
 
 How can I change port, if 3001 port is occupied?
-  - Go to calculator_node/bin/www
-  - Change '3001' to currently available port number in " var port = normalizePort(process.env.PORT || '3001'); " line
+  - Open app.js file in the backend directory
+  - Change '3001' to currently available port number in line 36 (app.listen(3001);)
