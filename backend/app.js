@@ -28,7 +28,7 @@ app.post('/calculate', function(req,res){
   console.log("Req Body : ",req.body.result);
   var answer = math.eval(req.body.result);
   answer = math.format(answer, { precision: 11 });
-  console.log(answer);
+  console.log("The result :", answer);
   res.status(200).send(answer);
 })
 

@@ -18,13 +18,13 @@ class App extends Component {
         console.log("Response : ", response);
         if(response.status === 200){
           this.setState({
-            result: response.data,
+            result: [response.data],
           })
         }
     })
       .catch(error => {
         this.setState({
-          result: "error"
+          result: "Error"
         })
     })
   }
@@ -32,17 +32,26 @@ class App extends Component {
   handleClick = button => {
 
     if(button === "="){
-        this.calculate()
-    }
-
-    else if(button === "C"){
-        this.clear()
-    }
-    else if(button === "CE"){
-        this.backspace()
-    }
-
-    else {
+      var i = this.state.result.indexOf('/');
+      if (i != -1){
+        var denominator = this.state.result.slice(i+1, this.state.result.length);
+        if (denominator == 0){
+          this.setState({
+            result: "Error"
+          })
+        }
+        else{
+          this.calculate();
+        }
+      }
+      else{
+        this.calculate();
+      }
+    } else if(button === "C"){
+      this.clear()
+    } else if(button === "CE"){
+      this.backspace()
+    } else {
       const updatedValue = update(this.state.result, {
         $push: [button],
       })
