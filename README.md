@@ -1,4 +1,5 @@
-# Calculator-Lab1-CMPE-273
+# Calculator
+This was made as a part of CMPE 273 coursework at SJSU
 
 ## How can I run Calculator?
   - Run calculator back end using instructions in ReadMe.md in backend directory
